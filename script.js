@@ -101,3 +101,40 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// ── Submit Project Modal ──
+const modalOverlay   = document.getElementById('modalOverlay');
+const submitBtn      = document.getElementById('submitProjectBtn');
+const modalClose     = document.getElementById('modalClose');
+const submitForm     = document.getElementById('submitForm');
+const formSuccess    = document.getElementById('formSuccess');
+
+function openModal() {
+  modalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modalOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+submitBtn.addEventListener('click', openModal);
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+submitForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  submitForm.classList.add('hidden');
+  formSuccess.classList.add('visible');
+  setTimeout(closeModal, 2800);
+  setTimeout(() => {
+    submitForm.classList.remove('hidden');
+    formSuccess.classList.remove('visible');
+    submitForm.reset();
+  }, 3200);
+});
