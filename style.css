@@ -569,56 +569,54 @@ strong { font-weight: 700; }
 .projects-header .section-title { text-align: left; margin-bottom: 8px; }
 .projects-header .section-desc  { text-align: left; margin: 0; }
 
-/* ── Leaderboard (Claude vibe) ── */
+/* ── Leaderboard ── */
 .leaderboard {
-  background: linear-gradient(135deg, #1C1A2E 0%, #12111F 60%, #1E1A14 100%);
+  /* warm near-black — matches site's dark bg (#0F0F0F) with slight warm lift */
+  background-color: #131210;
+  /* molecule/network pattern — same visual language as the icon tiles */
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='120' viewBox='0 0 160 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='3' fill='%23D97757' fill-opacity='.13'/%3E%3Ccircle cx='80' cy='44' r='2.2' fill='%23D97757' fill-opacity='.09'/%3E%3Ccircle cx='136' cy='20' r='3' fill='%23D97757' fill-opacity='.11'/%3E%3Ccircle cx='48' cy='90' r='2.2' fill='%23D97757' fill-opacity='.08'/%3E%3Ccircle cx='116' cy='96' r='3' fill='%23D97757' fill-opacity='.1'/%3E%3Ccircle cx='152' cy='68' r='2' fill='%23D97757' fill-opacity='.07'/%3E%3Ccircle cx='8' cy='72' r='2' fill='%23D97757' fill-opacity='.07'/%3E%3Cline x1='24' y1='24' x2='80' y2='44' stroke='%23D97757' stroke-opacity='.07' stroke-width='1'/%3E%3Cline x1='80' y1='44' x2='136' y2='20' stroke='%23D97757' stroke-opacity='.06' stroke-width='1'/%3E%3Cline x1='80' y1='44' x2='48' y2='90' stroke='%23D97757' stroke-opacity='.07' stroke-width='1'/%3E%3Cline x1='80' y1='44' x2='116' y2='96' stroke='%23D97757' stroke-opacity='.05' stroke-width='1'/%3E%3Cline x1='116' y1='96' x2='152' y2='68' stroke='%23D97757' stroke-opacity='.06' stroke-width='1'/%3E%3Cline x1='24' y1='24' x2='8' y2='72' stroke='%23D97757' stroke-opacity='.05' stroke-width='1'/%3E%3Cline x1='48' y1='90' x2='8' y2='72' stroke='%23D97757' stroke-opacity='.05' stroke-width='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
   border-radius: 24px; overflow: hidden; margin-bottom: 48px;
-  border: 1.5px solid rgba(217,119,87,.18);
+  border: 1.5px solid rgba(217,119,87,.14);
   position: relative;
 }
+/* same rainbow stripe the navbar uses — intentional, not decorative */
 .leaderboard::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, #D97757 0%, #C87B8A 33%, #8B9A6B 66%, #7B8FC0 100%);
+  opacity: .8;
 }
 .lb-header {
   display: flex; align-items: flex-start; justify-content: space-between;
-  padding: 32px 36px 24px; border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 32px 36px 24px; border-bottom: 1px solid rgba(255,255,255,.05);
 }
 .lb-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
 .lb-live-badge {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: .7rem; font-weight: 800; letter-spacing: .12em;
-  color: #4ade80; background: rgba(74,222,128,.1);
-  padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(74,222,128,.25);
+  font-size: .68rem; font-weight: 800; letter-spacing: .12em;
+  color: rgba(217,119,87,.9); background: rgba(217,119,87,.1);
+  padding: 4px 11px; border-radius: 999px; border: 1px solid rgba(217,119,87,.22);
 }
 .lb-dot {
-  width: 7px; height: 7px; border-radius: 50%; background: #4ade80;
-  animation: lb-pulse 1.8s ease-in-out infinite;
+  width: 6px; height: 6px; border-radius: 50%; background: #D97757;
+  animation: lb-pulse 2s ease-in-out infinite;
 }
 @keyframes lb-pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,.4); }
-  50% { opacity: .6; box-shadow: 0 0 0 4px rgba(74,222,128,0); }
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .35; }
 }
 .lb-prize-pill {
-  font-size: .75rem; font-weight: 600; color: rgba(255,255,255,.5);
-  background: rgba(255,255,255,.06); padding: 4px 12px; border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.08);
+  font-size: .74rem; font-weight: 600; color: rgba(255,255,255,.42);
+  background: rgba(255,255,255,.05); padding: 4px 11px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.07);
 }
 .lb-title {
-  font-family: var(--font-serif); font-size: 1.9rem; font-weight: 800;
-  color: #fff; letter-spacing: -.02em; margin-bottom: 4px;
+  font-family: var(--font-serif); font-size: 2rem; font-weight: 800;
+  color: #F0EDE8; letter-spacing: -.025em; margin-bottom: 4px;
 }
-.lb-sub { font-size: .88rem; color: rgba(255,255,255,.38); font-weight: 500; }
-.lb-trophy-wrap { flex-shrink: 0; }
-.lb-trophy {
-  font-size: 3rem; display: block;
-  animation: trophy-bob 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 16px rgba(255,200,0,.35));
-}
-@keyframes trophy-bob {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-6px) rotate(3deg); }
-}
+.lb-sub { font-size: .86rem; color: rgba(255,255,255,.3); font-weight: 500; }
+.lb-trophy-wrap { flex-shrink: 0; padding-top: 4px; }
+.lb-trophy { font-size: 2.4rem; display: block; }
 
 /* LB rows */
 .lb-body { padding: 20px 36px 28px; display: flex; flex-direction: column; gap: 10px; }
