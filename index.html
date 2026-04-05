@@ -319,136 +319,50 @@
 
       <div class="projects-header reveal">
         <div>
-          <h2 class="section-title" style="text-align:left;margin-bottom:8px">Member Projects</h2>
-          <p class="section-desc" style="text-align:left;margin:0">Built by our Claude Builder Club community — powered by Claude AI</p>
+          <h2 class="section-title" style="text-align:left;margin-bottom:8px">Project Showcase</h2>
+          <p class="section-desc" style="text-align:left;margin:0">Built by the Claude Builder Club community — powered by Claude AI</p>
         </div>
         <button class="btn btn-dark" id="submitProjectBtn">+ Submit Your Project</button>
       </div>
 
       <!-- Leaderboard -->
       <div class="leaderboard reveal">
-        <div class="leaderboard-header">
-          <span class="leaderboard-title">🏆 Leaderboard</span>
-          <span class="leaderboard-prize">Top 3 win <strong>amazing Claude goodies!</strong></span>
+        <div class="lb-header">
+          <div class="lb-header-left">
+            <div class="lb-meta">
+              <span class="lb-live-badge"><span class="lb-dot"></span>LIVE</span>
+              <span class="lb-prize-pill">🎁 Top 3 win Claude Goodies</span>
+            </div>
+            <h3 class="lb-title">Leaderboard</h3>
+            <p class="lb-sub">Vote for your favourite projects. Most votes wins.</p>
+          </div>
+          <div class="lb-trophy-wrap">
+            <span class="lb-trophy">🏆</span>
+          </div>
         </div>
-        <div class="leaderboard-podium">
-          <div class="podium-card rank-2">
-            <div class="podium-medal">🥈</div>
-            <p class="podium-name">CBC@PSU Website</p>
-            <p class="podium-author">Matt McCartney</p>
-            <span class="podium-score">142 pts</span>
-          </div>
-          <div class="podium-card rank-1">
-            <div class="podium-medal">🥇</div>
-            <p class="podium-name">Claude Builder Club @ IIT Madras</p>
-            <p class="podium-author">Aayush Chourasia</p>
-            <span class="podium-score">198 pts</span>
-            <span class="goodies-badge">✦ Claude Goodies</span>
-          </div>
-          <div class="podium-card rank-3">
-            <div class="podium-medal">🥉</div>
-            <p class="podium-name">Maya's Math World!</p>
-            <p class="podium-author">Israel Ogwu</p>
-            <span class="podium-score">98 pts</span>
-          </div>
+        <div class="lb-body" id="lbBody">
+          <!-- rendered by JS -->
         </div>
       </div>
 
-      <!-- Project Grid -->
-      <div class="project-grid">
-
-        <div class="project-card tile-olive reveal">
-          <div class="project-card-body">
-            <h3 class="project-title">Claude Builder Club @ IIT Madras</h3>
-            <p class="project-author">Aayush Chourasia · Indian Institute of Technology Madras</p>
-            <p class="project-desc">The CBC @ IIT Madras website is a clean, no-fluff landing page that tells students exactly what the club is, what they'll get out of it, and how to join, all in one place. It solves the basic but real problem of having a credible & central hub.</p>
-            <div class="project-tags">
-              <span class="project-tag">creative</span>
-            </div>
+      <!-- Showcase area: empty state + dynamic grid -->
+      <div class="showcase-area">
+        <div class="showcase-empty" id="showcaseEmpty">
+          <div class="ghost-grid">
+            <div class="ghost-card"></div>
+            <div class="ghost-card"></div>
+            <div class="ghost-card"></div>
           </div>
-          <div class="project-card-footer">
-            <a href="#" class="project-btn">View Code</a>
-            <a href="#" class="project-btn">View Website</a>
+          <div class="empty-overlay">
+            <div class="empty-emoji">🚀</div>
+            <h3>Be the first to showcase!</h3>
+            <p>Submit your Claude-powered project and claim the #1 spot on the leaderboard.</p>
+            <button class="btn btn-dark" id="emptySubmitBtn">+ Submit Your Project</button>
           </div>
         </div>
-
-        <div class="project-card tile-blue reveal">
-          <div class="project-card-body">
-            <h3 class="project-title">CBC@PSU Website</h3>
-            <p class="project-author">Matt McCartney · Pennsylvania State University</p>
-            <p class="project-desc">The official website for Penn State University's Claude Builder Club. This platform serves as a community hub, education resource center, project showcase, and event coordination tool for students and faculty exploring AI with Claude.</p>
-            <div class="project-tags">
-              <span class="project-tag">productivity</span>
-              <span class="project-tag">tool</span>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <a href="#" class="project-btn">View Code</a>
-            <a href="#" class="project-btn">View Website</a>
-          </div>
-        </div>
-
-        <div class="project-card tile-pink reveal">
-          <div class="project-card-body">
-            <h3 class="project-title">Maya's Math World!</h3>
-            <p class="project-author">Israel Ogwu · University of Maryland-College Park</p>
-            <p class="project-desc">This is a result of a demo project created for a friend who loves math!</p>
-            <div class="project-tags">
-              <span class="project-tag">productivity</span>
-              <span class="project-tag">creative</span>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <a href="#" class="project-btn">View Website</a>
-          </div>
-        </div>
-
-        <div class="project-card tile-lightpink reveal">
-          <div class="project-card-body">
-            <h3 class="project-title">robot in the dark</h3>
-            <p class="project-author">Darwin Gu · University of California-Berkeley</p>
-            <p class="project-desc">Make a short story about a robot who's afraid of the dark.</p>
-            <div class="project-tags">
-              <span class="project-tag">creative</span>
-              <span class="project-tag">game</span>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <a href="#" class="project-btn">View Website</a>
-          </div>
-        </div>
-
-        <div class="project-card tile-purple reveal">
-          <div class="project-card-body">
-            <h3 class="project-title">Claude@Stanford Website</h3>
-            <p class="project-author">Arinze Ooiazue · Stanford University</p>
-            <p class="project-desc">A central hub for members of Claude@Stanford showcasing projects built by members using Claude Code alongside other AI tools as well as learning content on how to build with Claude.</p>
-            <div class="project-tags">
-              <span class="project-tag">creative</span>
-              <span class="project-tag">tool</span>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <a href="#" class="project-btn">View Website</a>
-          </div>
-        </div>
-
-        <div class="project-card tile-orange reveal">
-          <div class="project-card-body">
-            <h3 class="project-title">Concert Visuals</h3>
-            <p class="project-author">Greg Feingold · N/A</p>
-            <p class="project-desc">Used opus 4.5 to make a visualizer for @FourTet / @squidsoup inspired concert visuals!</p>
-            <div class="project-tags">
-              <span class="project-tag">creative</span>
-              <span class="project-tag">tool</span>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <a href="#" class="project-btn">View Website</a>
-          </div>
-        </div>
-
+        <div class="project-grid" id="projectGrid"></div>
       </div>
+
     </div>
   </section>
 
