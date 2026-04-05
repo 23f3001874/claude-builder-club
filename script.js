@@ -129,7 +129,7 @@ function renderCard(p, votes) {
     <div class="project-card ${p.color}">
       <div class="project-card-body">
         <h3 class="project-title">${esc(p.name)}</h3>
-        <p class="project-author">${esc(p.author)} · ${esc(p.college)}</p>
+        <p class="project-author">${esc(p.author)}</p>
         <p class="project-desc">${esc(p.desc)}</p>
         <div class="project-tags">${tags}</div>
       </div>
@@ -276,7 +276,6 @@ submitForm.addEventListener('submit', (e) => {
     id:        Date.now().toString(),
     name:      document.getElementById('f-project').value.trim(),
     author:    document.getElementById('f-name').value.trim(),
-    college:   document.getElementById('f-college').value.trim(),
     desc:      document.getElementById('f-desc').value.trim(),
     tags,
     github:    document.getElementById('f-github').value.trim(),

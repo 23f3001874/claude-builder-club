@@ -664,6 +664,21 @@ strong { font-weight: 700; }
   text-align: center; padding: 32px 0; color: rgba(255,255,255,.3); font-size: .95rem;
 }
 
+/* Claude Code pixel mascot in leaderboard bg */
+.lb-mascot {
+  position: absolute;
+  bottom: 28px; right: 36px;
+  width: 88px; height: auto;
+  fill: #D97757;
+  opacity: .07;
+  pointer-events: none;
+  animation: mascot-breathe 5s ease-in-out infinite;
+}
+@keyframes mascot-breathe {
+  0%, 100% { opacity: .07; transform: translateY(0); }
+  50%       { opacity: .11; transform: translateY(-5px); }
+}
+
 /* ── Empty state / Ghost grid ── */
 .showcase-area { position: relative; }
 .showcase-empty { position: relative; }

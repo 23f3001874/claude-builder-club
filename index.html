@@ -343,6 +343,22 @@
         <div class="lb-body" id="lbBody">
           <!-- rendered by JS -->
         </div>
+        <!-- Claude Code pixel mascot — decorative bg element -->
+        <svg class="lb-mascot" viewBox="0 0 80 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- ears -->
+          <rect x="16" y="0"  width="16" height="8"/>
+          <rect x="48" y="0"  width="16" height="8"/>
+          <!-- body top row -->
+          <rect x="8"  y="8"  width="64" height="8"/>
+          <!-- body full-width block -->
+          <rect x="0"  y="16" width="80" height="32"/>
+          <!-- eye cutouts -->
+          <rect x="12" y="20" width="18" height="16" fill="#131210"/>
+          <rect x="50" y="20" width="18" height="16" fill="#131210"/>
+          <!-- legs -->
+          <rect x="12" y="48" width="16" height="16"/>
+          <rect x="52" y="48" width="16" height="16"/>
+        </svg>
       </div>
 
       <!-- Showcase area: empty state + dynamic grid -->
@@ -373,23 +389,17 @@
       <h3 class="modal-title">Submit Your Project</h3>
       <p class="modal-sub">Share what you've built with Claude — top 3 projects win Claude goodies!</p>
       <form class="submit-form" id="submitForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="f-name">Your Name</label>
-            <input type="text" id="f-name" placeholder="e.g. Aayush Chourasia" required />
-          </div>
-          <div class="form-group">
-            <label for="f-college">College / University</label>
-            <input type="text" id="f-college" placeholder="e.g. IIT Madras" required />
-          </div>
+        <div class="form-group">
+          <label for="f-name">Your Name</label>
+          <input type="text" id="f-name" placeholder="" required />
         </div>
         <div class="form-group">
           <label for="f-project">Project Name</label>
-          <input type="text" id="f-project" placeholder="e.g. AI Study Buddy" required />
+          <input type="text" id="f-project" placeholder="" required />
         </div>
         <div class="form-group">
           <label for="f-desc">Description</label>
-          <textarea id="f-desc" placeholder="What does your project do? What problem does it solve?" required></textarea>
+          <textarea id="f-desc" placeholder="" required></textarea>
         </div>
         <div class="form-group">
           <label>Tags</label>
@@ -410,16 +420,16 @@
         </div>
         <div class="form-group">
           <label for="f-github">GitHub URL <span style="font-weight:400;text-transform:none">(optional)</span></label>
-          <input type="url" id="f-github" placeholder="https://github.com/..." />
+          <input type="url" id="f-github" placeholder="" />
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="f-website">Live Website URL</label>
-            <input type="url" id="f-website" placeholder="https://..." />
+            <input type="url" id="f-website" placeholder="" />
           </div>
           <div class="form-group">
             <label for="f-demo">Demo URL <span style="font-weight:400;text-transform:none">(optional)</span></label>
-            <input type="url" id="f-demo" placeholder="https://..." />
+            <input type="url" id="f-demo" placeholder="" />
           </div>
         </div>
         <button type="submit" class="btn btn-dark form-submit">Submit Project →</button>
