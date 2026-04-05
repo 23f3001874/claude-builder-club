@@ -103,14 +103,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // ── Project Showcase ──
+
+// ── CURATOR PICKS — edit these to update the leaderboard ──
+// Set name + author for each rank. Leave name empty to show an open slot.
+const CURATOR_PICKS = [
+  { name: '', author: '' }, // 🥇 1st place
+  { name: '', author: '' }, // 🥈 2nd place
+  { name: '', author: '' }, // 🥉 3rd place
+];
+
 const PROJECTS_KEY = 'cbc-projects';
-const VOTES_KEY    = 'cbc-votes';
 const COLORS = ['tile-olive','tile-blue','tile-pink','tile-lightpink','tile-purple','tile-orange'];
 
 function getProjects() { return JSON.parse(localStorage.getItem(PROJECTS_KEY) || '[]'); }
 function saveProjects(p) { localStorage.setItem(PROJECTS_KEY, JSON.stringify(p)); }
-function getVotes()    { return JSON.parse(localStorage.getItem(VOTES_KEY) || '[]'); }
-function saveVotes(v)  { localStorage.setItem(VOTES_KEY, JSON.stringify(v)); }
 
 function esc(str) {
   return String(str)
@@ -118,8 +124,7 @@ function esc(str) {
     .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-function renderCard(p, votes) {
-  const hasVoted = votes.includes(p.id);
+function renderCard(p) {
   const links = [];
   if (p.github)  links.push(`<a href="${esc(p.github)}"  target="_blank" rel="noopener" class="project-btn">View Code</a>`);
   if (p.website) links.push(`<a href="${esc(p.website)}" target="_blank" rel="noopener" class="project-btn">View Website</a>`);
@@ -133,83 +138,45 @@ function renderCard(p, votes) {
         <p class="project-desc">${esc(p.desc)}</p>
         <div class="project-tags">${tags}</div>
       </div>
-      <div class="project-card-footer">
-        <button class="vote-btn${hasVoted?' voted':''}" data-id="${p.id}">
-          ${hasVoted?'♥':'♡'} ${p.votes}
-        </button>
-        ${links.join('')}
-      </div>
+      ${links.length ? `<div class="project-card-footer">${links.join('')}</div>` : ''}
     </div>`;
 }
 
 function renderLeaderboard() {
-  const projects = getProjects();
   const lbBody = document.getElementById('lbBody');
   if (!lbBody) return;
 
-  if (projects.length === 0) {
-    const medals = ['🥇','🥈','🥉'];
-    const cls    = ['lb-rank-gold','lb-rank-silver','lb-rank-bronze'];
-    lbBody.innerHTML = medals.map((m,i) => `
-      <div class="lb-row lb-row-empty ${cls[i]}" id="lbEmptyRow${i}" style="cursor:pointer">
-        <div class="lb-medal">${m}</div>
+  const medals = ['🥇','🥈','🥉'];
+  const cls    = ['lb-rank-gold','lb-rank-silver','lb-rank-bronze'];
+
+  lbBody.innerHTML = CURATOR_PICKS.map((pick, i) => {
+    const filled = pick.name.trim() !== '';
+    return filled ? `
+      <div class="lb-row ${cls[i]}">
+        <div class="lb-medal">${medals[i]}</div>
         <div class="lb-info">
-          <p class="lb-proj-name lb-tbd">Your project here?</p>
-          <p class="lb-proj-author">Be the first to submit →</p>
-          <div class="lb-bar-track"><div class="lb-bar-fill" style="width:0%"></div></div>
+          <p class="lb-proj-name">${esc(pick.name)}</p>
+          <p class="lb-proj-author">${esc(pick.author)}</p>
         </div>
         <div class="lb-score-col">
-          <span class="lb-pts">—</span>
-          <span class="lb-pts-label">votes</span>
+          <span class="lb-goodies-badge">Claude Goodies</span>
         </div>
-      </div>`).join('');
-    // clicking empty row opens modal
-    lbBody.querySelectorAll('.lb-row-empty').forEach(r => r.addEventListener('click', openModal));
-    return;
-  }
-
-  const sorted   = [...projects].sort((a,b) => b.votes - a.votes).slice(0,3);
-  const maxVotes = Math.max(sorted[0].votes, 1);
-  const medals   = ['🥇','🥈','🥉'];
-  const cls      = ['lb-rank-gold','lb-rank-silver','lb-rank-bronze'];
-
-  let html = sorted.map((p,i) => `
-    <div class="lb-row ${cls[i]}">
-      <div class="lb-medal">${medals[i]}</div>
-      <div class="lb-info">
-        <p class="lb-proj-name">${esc(p.name)}</p>
-        <p class="lb-proj-author">${esc(p.author)}</p>
-        <div class="lb-bar-track">
-          <div class="lb-bar-fill" style="width:${Math.round(p.votes/maxVotes*100)}%"></div>
-        </div>
-      </div>
-      <div class="lb-score-col">
-        <span class="lb-pts">${p.votes}</span>
-        <span class="lb-pts-label">votes</span>
-        <span class="lb-goodies-badge">Claude Goodies</span>
-      </div>
-    </div>`).join('');
-
-  // fill remaining empty slots
-  for (let i = sorted.length; i < 3; i++) {
-    html += `
+      </div>` : `
       <div class="lb-row lb-row-empty ${cls[i]}" style="cursor:pointer">
         <div class="lb-medal">${medals[i]}</div>
         <div class="lb-info">
-          <p class="lb-proj-name lb-tbd">Your project here?</p>
-          <p class="lb-proj-author">Submit now →</p>
-          <div class="lb-bar-track"><div class="lb-bar-fill" style="width:0%"></div></div>
+          <p class="lb-proj-name lb-tbd">Your project could be here</p>
+          <p class="lb-proj-author">Submit yours →</p>
         </div>
-        <div class="lb-score-col"><span class="lb-pts">—</span><span class="lb-pts-label">votes</span></div>
+        <div class="lb-score-col"><span class="lb-pts lb-tbd">—</span></div>
       </div>`;
-  }
-  lbBody.innerHTML = html;
+  }).join('');
+
   lbBody.querySelectorAll('.lb-row-empty').forEach(r => r.addEventListener('click', openModal));
 }
 
 function renderProjects() {
   const projects = getProjects();
-  const votes    = getVotes();
   const emptyEl  = document.getElementById('showcaseEmpty');
   const gridEl   = document.getElementById('projectGrid');
   if (!emptyEl || !gridEl) return;
@@ -221,29 +188,9 @@ function renderProjects() {
   } else {
     emptyEl.style.display = 'none';
     gridEl.style.display  = 'grid';
-    gridEl.innerHTML = projects.map(p => renderCard(p, votes)).join('');
-    gridEl.querySelectorAll('.vote-btn').forEach(btn => {
-      btn.addEventListener('click', () => handleVote(btn.dataset.id));
-    });
+    gridEl.innerHTML = projects.map(p => renderCard(p)).join('');
   }
   renderLeaderboard();
-}
-
-function handleVote(id) {
-  const projects = getProjects();
-  const votes    = getVotes();
-  const idx = projects.findIndex(p => p.id === id);
-  if (idx === -1) return;
-  if (votes.includes(id)) {
-    projects[idx].votes = Math.max(0, projects[idx].votes - 1);
-    saveVotes(votes.filter(v => v !== id));
-  } else {
-    projects[idx].votes++;
-    votes.push(id);
-    saveVotes(votes);
-  }
-  saveProjects(projects);
-  renderProjects();
 }
 
 // ── Modal ──
@@ -273,16 +220,15 @@ submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const tags = [...document.querySelectorAll('.tag-checkbox:checked')].map(cb => cb.value);
   const project = {
-    id:        Date.now().toString(),
-    name:      document.getElementById('f-project').value.trim(),
-    author:    document.getElementById('f-name').value.trim(),
-    desc:      document.getElementById('f-desc').value.trim(),
+    id:          Date.now().toString(),
+    name:        document.getElementById('f-project').value.trim(),
+    author:      document.getElementById('f-name').value.trim(),
+    desc:        document.getElementById('f-desc').value.trim(),
     tags,
-    github:    document.getElementById('f-github').value.trim(),
-    website:   document.getElementById('f-website').value.trim(),
-    demo:      document.getElementById('f-demo').value.trim(),
-    votes:     0,
-    color:     COLORS[Math.floor(Math.random() * COLORS.length)],
+    github:      document.getElementById('f-github').value.trim(),
+    website:     document.getElementById('f-website').value.trim(),
+    demo:        document.getElementById('f-demo').value.trim(),
+    color:       COLORS[Math.floor(Math.random() * COLORS.length)],
     submittedAt: Date.now(),
   };
   const projects = getProjects();
