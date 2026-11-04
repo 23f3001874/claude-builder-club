@@ -4,7 +4,7 @@ Welcome to the official website of the **Claude Builder Club** at IIT Madras —
 
 ## 🚀 Live Demo
 
-🔗 [Visit Website](https://claude-builder-club.vercel.app)
+🔗 [iitm.claudebuilders.club](https://iitm.claudebuilders.club/) · [claude-builder-club.vercel.app](https://claude-builder-club.vercel.app)
 
 ## ✨ Features
 
@@ -83,10 +83,10 @@ claude-builder-club/
 ### Sections
 
 1. **Navbar** — Sticky navigation with gradient glow effect
-2. **Hero** — Large logo, colorful icon tiles, dual CTA buttons
-3. **About** — Three-column card grid explaining the club
-4. **Activities** — Showcase of weekly sessions, hackathons, office hours
-5. **Updates** — Latest news and event cards
+2. **Hero** — Large logo, colorful icon tiles, Express Interest CTA
+3. **About** — Mission statement and four pillars
+4. **Activities** — Monthly meetings, hands-on workshops, yearly Spring hackathon
+5. **Perks & Resources**, FAQ and **Updates** — Latest news and event cards
 6. **Join CTA** — Dark gradient section with call-to-action
 7. **Footer** — Links and copyright
 
@@ -101,7 +101,6 @@ claude-builder-club/
 ## 🔗 Links
 
 - **Interest Form** — [Join the Club](https://www.jotform.com/253555944387168)
-- **Member Check-In** — [Check In](https://www.jotform.com/253566966596075)
 - **GitHub Repository** — [View Source](https://github.com/23f3001874/claude-builder-club)
 
 ## 🤝 Contributing
@@ -122,7 +121,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Claude Builder Club — IIT Madras**
 
-- 🌐 Website: [https://claude-builder-club.vercel.app](https://claude-builder-club.vercel.app)
+- 🌐 Website: [https://iitm.claudebuilders.club](https://iitm.claudebuilders.club/) (also [claude-builder-club.vercel.app](https://claude-builder-club.vercel.app))
 - 📧 Email: 23f3001874@ds.study.iitm.ac.in
 - 🐙 GitHub: [@23f3001874](https://github.com/23f3001874)
 
