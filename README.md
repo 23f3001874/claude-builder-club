@@ -4,7 +4,7 @@ Welcome to the official website of the **Claude Builder Club** at IIT Madras —
 
 ## 🚀 Live Demo
 
-🔗 [iitm.claudebuilders.club](https://iitm.claudebuilders.club/) · [claude-builder-club.vercel.app](https://claude-builder-club.vercel.app)
+🔗 [Visit Website](https://iitm.claudebuilders.club/)
 
 ## ✨ Features
 
@@ -121,7 +121,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Claude Builder Club — IIT Madras**
 
-- 🌐 Website: [https://iitm.claudebuilders.club](https://iitm.claudebuilders.club/) (also [claude-builder-club.vercel.app](https://claude-builder-club.vercel.app))
+- 🌐 Website: [https://iitm.claudebuilders.club](https://iitm.claudebuilders.club/)
 - 📧 Email: 23f3001874@ds.study.iitm.ac.in
 - 🐙 GitHub: [@23f3001874](https://github.com/23f3001874)
 
