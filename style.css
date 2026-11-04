@@ -888,7 +888,7 @@ strong { font-weight: 700; }
   }
   .nav-actions.open {
     display: flex; flex-direction: column;
-    position: absolute; top: 340px; left: 0; right: 0;
+    position: absolute; top: 310px; left: 0; right: 0;
     background: var(--nav-bg-scrolled);
     padding: 0 32px 24px; gap: 10px;
   }
