@@ -322,40 +322,60 @@ strong { font-weight: 700; }
 .next-meeting {
   width: min(680px, 100%);
   margin: -12px auto 28px;
-  padding: 16px 18px;
+  padding: 28px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  border-top: 1px solid var(--nav-border);
-  border-bottom: 1px solid var(--nav-border);
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  background: var(--card-bg);
+  box-shadow: 0 16px 44px rgba(35, 24, 18, .09);
   text-align: left;
 }
-.next-meeting-main,
-.next-meeting-meta {
+.next-meeting-main {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
   gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--nav-border);
 }
 .next-meeting-label {
-  color: var(--orange);
-  font-size: .72rem;
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 3vw, 2rem);
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  line-height: 1;
 }
 .next-meeting-main strong {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.18rem;
+  color: var(--text);
 }
 .next-meeting-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   color: var(--text-mid);
-  font-size: .88rem;
+  font-size: .95rem;
+  font-weight: 500;
 }
-.next-meeting-meta a {
-  color: var(--text);
+.next-meeting-cta {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font);
   font-weight: 800;
-  border-bottom: 1.5px solid var(--orange);
+  transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.next-meeting-cta:hover {
+  background: var(--orange);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(217,119,87,.22);
 }
 
 /* ── Section Shared ── */
@@ -992,7 +1012,7 @@ strong { font-weight: 700; }
   .icon-tile { width: 64px; height: 64px; border-radius: 14px; }
   .icon-tile svg { width: 36px; height: 36px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
-  .next-meeting { flex-direction: column; align-items: flex-start; }
+  .next-meeting { padding: 22px; }
   .next-meeting-main,
   .next-meeting-meta { flex-wrap: wrap; }
   .update-schedule { flex-direction: column; align-items: flex-start; }

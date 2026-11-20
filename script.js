@@ -8,9 +8,11 @@
   const toggle = document.getElementById('themeToggle');
   const saved = localStorage.getItem('cbc-theme');
 
-  // Apply saved preference or respect system preference
-  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  // Default to light mode; retain an explicit user choice when one exists.
+  if (saved === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
   }
 
   toggle.addEventListener('click', () => {
