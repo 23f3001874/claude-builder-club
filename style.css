@@ -995,6 +995,8 @@ strong { font-weight: 700; }
   .next-meeting { flex-direction: column; align-items: flex-start; }
   .next-meeting-main,
   .next-meeting-meta { flex-wrap: wrap; }
+  .update-schedule { flex-direction: column; align-items: flex-start; }
+  .update-schedule strong { text-align: left; }
   .join-card { padding: 56px 24px; }
   .join-actions { flex-direction: column; align-items: stretch; }
 }
