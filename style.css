@@ -173,8 +173,24 @@ strong { font-weight: 700; }
   display: flex; align-items: center; gap: 10px;
   font-size: 1.1rem; color: var(--text);
 }
-.logo-text { letter-spacing: -.01em; font-weight: 600; font-size: 1.1rem; }
-.logo-text strong { font-weight: 800; font-size: 1.15rem; }
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  letter-spacing: -.01em;
+}
+.logo-text strong {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.logo-campus {
+  margin-top: 4px;
+  color: var(--text-mid);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
 
 /* Logo images */
 .claude-logo-img {
