@@ -27,6 +27,41 @@
   });
 })();
 
+// ── Next meeting countdown (IST) ──
+(function initMeetingCountdown() {
+  const countdown = document.getElementById('nextMeetingCountdown');
+  const countdownLabel = countdown?.querySelector('.countdown-label');
+  const countdownValue = document.getElementById('countdownValue');
+  if (!countdown || !countdownLabel || !countdownValue) return;
+
+  const sessionStart = new Date('2026-11-21T21:00:00+05:30');
+
+  function updateCountdown() {
+    const remaining = sessionStart.getTime() - Date.now();
+
+    if (remaining <= 0) {
+      countdown.classList.add('is-live');
+      countdownLabel.textContent = 'Status';
+      countdownValue.textContent = 'Live now';
+      return;
+    }
+
+    const totalSeconds = Math.floor(remaining / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    countdownLabel.textContent = 'Starts in';
+    countdownValue.textContent = days > 0
+      ? `${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`
+      : `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+  }
+
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
+})();
+
 // ── Button Ripple / Glow Follow ──
 document.querySelectorAll('.btn').forEach((btn) => {
   btn.addEventListener('mousemove', (e) => {
