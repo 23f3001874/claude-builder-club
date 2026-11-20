@@ -318,6 +318,46 @@ strong { font-weight: 700; }
   display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
 }
 
+/* ── Next meeting ── */
+.next-meeting {
+  width: min(680px, 100%);
+  margin: -12px auto 28px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--nav-border);
+  border-bottom: 1px solid var(--nav-border);
+  text-align: left;
+}
+.next-meeting-main,
+.next-meeting-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.next-meeting-label {
+  color: var(--orange);
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.next-meeting-main strong {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+}
+.next-meeting-meta {
+  color: var(--text-mid);
+  font-size: .88rem;
+}
+.next-meeting-meta a {
+  color: var(--text);
+  font-weight: 800;
+  border-bottom: 1.5px solid var(--orange);
+}
+
 /* ── Section Shared ── */
 .section-title {
   font-family: var(--font-serif);
@@ -474,6 +514,38 @@ strong { font-weight: 700; }
   border: 1.5px solid var(--text); color: var(--text);
 }
 .badge-announce { border-color: var(--orange); color: var(--orange); }
+.badge-next {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: rgba(217,119,87,.08);
+}
+.update-featured {
+  border-color: var(--orange);
+  box-shadow: 0 10px 32px rgba(217,119,87,.1);
+}
+.update-schedule {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: -4px 0 16px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--orange);
+  background: rgba(217,119,87,.07);
+  border-radius: 6px;
+}
+.update-schedule span {
+  color: var(--orange);
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.update-schedule strong {
+  font-family: var(--font-serif);
+  font-size: .95rem;
+  text-align: right;
+}
 .update-campus {
   font-size: .78rem; color: var(--text-light); font-weight: 500;
 }
@@ -920,6 +992,9 @@ strong { font-weight: 700; }
   .icon-tile { width: 64px; height: 64px; border-radius: 14px; }
   .icon-tile svg { width: 36px; height: 36px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
+  .next-meeting { flex-direction: column; align-items: flex-start; }
+  .next-meeting-main,
+  .next-meeting-meta { flex-wrap: wrap; }
   .join-card { padding: 56px 24px; }
   .join-actions { flex-direction: column; align-items: stretch; }
 }
