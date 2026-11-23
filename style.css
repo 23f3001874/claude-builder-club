@@ -375,57 +375,6 @@ strong { font-weight: 700; }
   font-size: .95rem;
   font-weight: 500;
 }
-.next-meeting-countdown {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 58px;
-  padding: 12px 16px;
-  border: 1px solid var(--nav-border);
-  border-radius: 12px;
-  background: var(--beige-dark);
-}
-.countdown-label {
-  color: var(--text-mid);
-  font-size: .78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-.next-meeting-countdown strong {
-  font-family: var(--font);
-  font-size: 1.15rem;
-  font-weight: 800;
-  font-style: normal;
-  color: var(--orange-dark);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0;
-}
-.next-meeting-countdown.is-live {
-  border-color: rgba(217,119,87,.42);
-  background: rgba(217,119,87,.1);
-}
-.next-meeting-countdown.is-live .countdown-label,
-.next-meeting-countdown.is-live strong {
-  color: var(--orange-dark);
-}
-.next-meeting-countdown.is-live strong::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 8px;
-  border-radius: 50%;
-  background: var(--orange);
-  box-shadow: 0 0 0 5px rgba(217,119,87,.14);
-  animation: livePulse 1.5s ease-out infinite;
-}
-@keyframes livePulse {
-  0% { box-shadow: 0 0 0 0 rgba(217,119,87,.35); }
-  70% { box-shadow: 0 0 0 7px rgba(217,119,87,0); }
-  100% { box-shadow: 0 0 0 0 rgba(217,119,87,0); }
-}
 .next-meeting-cta {
   min-height: 54px;
   display: flex;
@@ -1082,7 +1031,6 @@ strong { font-weight: 700; }
   .next-meeting { padding: 22px; }
   .next-meeting-main,
   .next-meeting-meta { flex-wrap: wrap; }
-  .next-meeting-countdown { align-items: flex-start; flex-direction: column; }
   .update-schedule { flex-direction: column; align-items: flex-start; }
   .update-schedule strong { text-align: left; }
   .join-card { padding: 56px 24px; }
