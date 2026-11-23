@@ -156,7 +156,6 @@ Please keep changes focused, preserve the existing visual language, and avoid ad
 **Claude Builder Club, IIT Madras**
 
 - 🌐 Website: [iitm.claudebuilders.club](https://iitm.claudebuilders.club/)
-- ✉️ Email: 23f3001874@ds.study.iitm.ac.in
 - 🐙 GitHub: [@23f3001874](https://github.com/23f3001874)
 
 ## License
