@@ -1,9 +1,15 @@
 # Claude Builder Club @ IIT Madras
 
-The official community website for developers, designers, and entrepreneurs at IIT Madras who want to learn, experiment, and build with Claude.
+The official community website for builders at IIT Madras who want to learn, experiment, and create with Claude. It gives students a clear path from discovering the club to joining the next workshop.
 
 [![Live site](https://img.shields.io/badge/Live%20site-iitm.claudebuilders.club-D97757?style=flat-square)](https://iitm.claudebuilders.club/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-1A1A1A?style=flat-square)](LICENSE)
+
+## Preview
+
+![Claude Builder Club hero section](docs/homepage.png)
+
+The focused preview above shows the landing-page identity: the Claude mark, the IIT Madras builder-club message, and the colorful activity icons that define the site.
 
 ## What is here
 
@@ -73,7 +79,6 @@ claude-builder-club/
 - [Live website](https://iitm.claudebuilders.club/)
 - [GitHub repository](https://github.com/23f3001874/claude-builder-club)
 - [Express interest](https://www.jotform.com/253555944387168)
-- [Member check-in](https://www.jotform.com/253566966596075)
 
 ## Contributing
 
