@@ -1,132 +1,110 @@
-# 🌟 Claude Builder Club — IIT Madras
+# Claude Builder Club @ IIT Madras
 
-Welcome to the official website of the **Claude Builder Club** at IIT Madras — a vibrant community of developers, designers, and entrepreneurs building real products powered by Claude AI.
+The official community website for developers, designers, and entrepreneurs at IIT Madras who want to learn, experiment, and build with Claude.
 
-## 🚀 Live Demo
+[![Live site](https://img.shields.io/badge/Live%20site-iitm.claudebuilders.club-D97757?style=flat-square)](https://iitm.claudebuilders.club/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-1A1A1A?style=flat-square)](LICENSE)
 
-🔗 [Visit Website](https://iitm.claudebuilders.club/)
+## Preview
 
-## ✨ Features
+![Claude Builder Club homepage](docs/homepage.png)
 
-- **🎨 Modern Editorial Design** — Bold typography with Fraunces serif and DM Sans
-- **🌓 Dark/Light Mode** — Smooth theme toggle with localStorage persistence
-- **🎯 Interactive UI** — Animated icon tiles, hover effects, and smooth scroll reveals
-- **📱 Fully Responsive** — Optimized for desktop, tablet, and mobile
-- **🌈 Gradient Navbar** — Glowing gradient accent using Claude brand colors
-- **⚡ Fast & Lightweight** — Pure HTML, CSS, and vanilla JavaScript
-- **♿ Accessible** — Semantic HTML and ARIA labels
+## What is here
 
-## 🛠 Tech Stack
+- A responsive landing page with an editorial visual system built around Claude's warm orange, pink, olive, and blue palette.
+- Clear information about the club, activities, perks, FAQs, and member updates.
+- A featured status card for the **Next Workshop session coming soon** state.
+- Light mode by default, with an optional dark mode saved in `localStorage`.
+- Mobile navigation, scroll reveals, hover states, and CTA links for joining the club.
+- A lightweight static implementation with no build step or runtime dependency.
 
-- **HTML5** — Semantic markup
-- **CSS3** — Custom properties, flexbox, grid, animations
-- **JavaScript** — Vanilla JS for interactions and dark mode
-- **Fonts** — Google Fonts (Fraunces, DM Sans)
+## Current sections
 
-## 🎨 Color Palette
+| Section | Purpose |
+| --- | --- |
+| Navbar | Brand lockup, navigation, theme switcher, and join actions |
+| Hero | Club introduction, visual identity, and interest CTA |
+| About | Community principles and who the club is for |
+| Activities | Meetings, workshops, and the campus-wide hackathon |
+| Perks & Resources | Claude Pro, API credits, swag, and member benefits |
+| Updates | Workshop and event announcements |
+| FAQ | Answers about membership, meetings, and Claude |
 
-- **Orange** `#D97757` — Primary accent
-- **Pink** `#C87B8A` — Tile accent
-- **Olive** `#8B9A6B` — Tile accent
-- **Blue** `#7B8FC0` — Tile accent
-- **Beige** `#EDE7DE` — Light mode background
-- **Dark** `#0F0F0F` — Dark mode background
+## Tech stack
 
-## 📦 Installation
+- HTML5
+- CSS3 with custom properties, Grid, Flexbox, and responsive media queries
+- Vanilla JavaScript
+- Google Fonts: Fraunces and DM Sans
+- Vercel-compatible static deployment
 
-1. Clone the repository:
+## Run locally
+
 ```bash
 git clone https://github.com/23f3001874/claude-builder-club.git
 cd claude-builder-club
-```
-
-2. Open `index.html` in your browser or use a local server:
-```bash
-# Using Python
 python -m http.server 8000
-
-# Using Node.js
-npx serve
 ```
 
-3. Visit `http://localhost:8000`
+Open [http://localhost:8000](http://localhost:8000) in your browser. You can also use any static server, such as `npx serve`.
 
-## 🚢 Deployment
+## Deploy
 
-### Deploy to Vercel (Recommended)
+The project has no build command or environment variables.
 
-1. Push your code to GitHub
-2. Visit [vercel.com/new](https://vercel.com/new)
-3. Import your repository
-4. Click "Deploy"
+1. Import the GitHub repository into [Vercel](https://vercel.com/new).
+2. Leave the framework preset as **Other**.
+3. Keep the build command empty and deploy.
 
-### Deploy to Netlify
+The same static files can be hosted on Netlify, GitHub Pages, or any standard web server.
 
-1. Push your code to GitHub
-2. Visit [app.netlify.com/start](https://app.netlify.com/start)
-3. Connect your repository
-4. Deploy with default settings
+## Project structure
 
-## 📁 Project Structure
-
-```
+```text
 claude-builder-club/
-├── index.html          # Main HTML file
-├── style.css           # All styles with dark mode support
-├── script.js           # Interactions and theme toggle
-├── claude_logo.jpg     # Claude brand logo
-└── README.md           # This file
+├── index.html          # Page structure and content
+├── style.css           # Visual system, responsive layout, and themes
+├── script.js           # Interactions, theme state, and UI behavior
+├── claude_logo.jpg     # Brand asset
+├── docs/
+│   └── homepage.png    # README preview screenshot
+├── LICENSE             # MIT open-source license
+└── README.md
 ```
 
-## 🎯 Features Breakdown
+## Links
 
-### Sections
+- [Live website](https://iitm.claudebuilders.club/)
+- [GitHub repository](https://github.com/23f3001874/claude-builder-club)
+- [Express interest](https://www.jotform.com/253555944387168)
+- [Member check-in](https://www.jotform.com/253566966596075)
 
-1. **Navbar** — Sticky navigation with gradient glow effect
-2. **Hero** — Large logo, colorful icon tiles, Express Interest CTA
-3. **About** — Mission statement and four pillars
-4. **Activities** — Monthly meetings, hands-on workshops, yearly Spring hackathon
-5. **Perks & Resources**, FAQ and **Updates** — Latest news and event cards
-6. **Join CTA** — Dark gradient section with call-to-action
-7. **Footer** — Links and copyright
+## Contributing
 
-### Interactions
+Ideas and improvements are welcome. Good contributions include new workshop announcements, accessibility improvements, responsive refinements, content updates, and interactive features that help members discover or join the club.
 
-- **Scroll Reveal** — IntersectionObserver for staggered animations
-- **Dark Mode Toggle** — Respects system preference, saves to localStorage
-- **Button Glow** — Radial gradient follows cursor position
-- **Hover Effects** — Cards lift, icons rotate, colors shift
-- **Mobile Menu** — Hamburger navigation for small screens
+1. Fork the repository.
+2. Create a focused branch:
 
-## 🔗 Links
+   ```bash
+   git checkout -b feature/your-feature
+   ```
 
-- **Interest Form** — [Join the Club](https://www.jotform.com/253555944387168)
-- **GitHub Repository** — [View Source](https://github.com/23f3001874/claude-builder-club)
+3. Make and test your change locally.
+4. Commit with a clear message and push your branch.
+5. Open a pull request describing the change and how you tested it.
 
-## 🤝 Contributing
+Please keep changes focused, preserve the existing visual language, and avoid adding a framework for small static-site improvements.
 
-Contributions are welcome! Feel free to:
+## License
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+This project is open source under the [MIT License](LICENSE). Contributions are welcome under the same license.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👥 Contact
+## Contact
 
 **Claude Builder Club — IIT Madras**
 
-- 🌐 Website: [https://iitm.claudebuilders.club](https://iitm.claudebuilders.club/)
-- 📧 Email: 23f3001874@ds.study.iitm.ac.in
-- 🐙 GitHub: [@23f3001874](https://github.com/23f3001874)
+- Email: 23f3001874@ds.study.iitm.ac.in
+- GitHub: [@23f3001874](https://github.com/23f3001874)
 
----
-
-**Built with ❤️ by the Claude Builder Club community at IIT Madras**
-
-*Powered by Claude AI • Deployed on Vercel*
+Built by the Claude Builder Club community at IIT Madras.
