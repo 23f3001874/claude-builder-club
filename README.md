@@ -5,10 +5,6 @@ The official community website for developers, designers, and entrepreneurs at I
 [![Live site](https://img.shields.io/badge/Live%20site-iitm.claudebuilders.club-D97757?style=flat-square)](https://iitm.claudebuilders.club/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-1A1A1A?style=flat-square)](LICENSE)
 
-## Preview
-
-![Claude Builder Club homepage](docs/homepage.png)
-
 ## What is here
 
 - A responsive landing page with an editorial visual system built around Claude's warm orange, pink, olive, and blue palette.
